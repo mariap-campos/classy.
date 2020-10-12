@@ -1,0 +1,66 @@
+#page-landing{
+    width: 100vw;
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--color-title);
+    background-color: var(--color-primary-dark)
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+.logo-container img {
+    margin-top: 5rem;
+    height: 8rem;
+    max-width: 100%;
+}
+
+.logo-container h2 {
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 4.6rem;
+    margin-top: 0.8rem;
+}
+
+.heroImg {
+    width: 100%;
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+
+.buttons-container a {
+    width: 30rem;
+    height: 5.4rem;
+    border-radius: 0.8rem;
+    font: 700 2.0rem Righteous;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    color: var(--color-title);
+}
+
+.buttons-container a:first-child {
+    margin-right: 1.6rem;
+}
+
+.buttons-container a.student{
+    background-color: var(--color-primary);
+}
+
+.buttons-container a.admin {
+    background-color: var(--color-secundary);
+}
+
+
+
