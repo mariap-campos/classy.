@@ -1,0 +1,21 @@
+
+#page-schedule {
+    width: 100vw;
+    height: 100vh;
+  
+    max-width: unset;
+}
+
+#page-schedule main {
+    margin: 3.2rem auto;
+    width: 90%;
+}
+
+@media (min-width: 700px) {
+    #page-schedule main {
+        padding: 3.2rem 0;
+        max-width: 740px;
+        margin: 0 auto;
+    }
+
+}

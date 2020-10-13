@@ -1,0 +1,42 @@
+.page-header {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primary);  
+}
+
+.page-header .top-bar-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text);
+    padding: 1.6rem 0;
+}
+
+.page-header .top-bar-container a {
+    height: 3.8rem;
+    font-size: 2.5rem;
+    color: var(--color-title);
+    transition: opacity 0.3s ease;
+
+}
+
+.page-header .top-bar-container a:hover { opacity: 0.6; }
+
+.page-header .top-bar-container > img {
+    height: 1.8rem;
+}
+
+.page-header .header-content {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    margin: 2rem auto;
+}
+
+.page-header .header-content strong {
+    font: 600 2rem Poppins;
+    line-height: 2.2rem;
+    color: var(--color-text);
+}

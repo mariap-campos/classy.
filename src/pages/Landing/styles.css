@@ -6,7 +6,7 @@
     align-items: center;
 
     color: var(--color-title);
-    background-color: var(--color-primary-dark)
+    background-color: var(--color-primary);
 }
 
 .logo-container {
@@ -21,10 +21,9 @@
 }
 
 .logo-container h2 {
-    font-weight: 500;
-    font-size: 2.4rem;
-    line-height: 4.6rem;
-    margin-top: 0.8rem;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-top: 0.3rem;
 }
 
 .heroImg {
@@ -41,10 +40,11 @@
     width: 30rem;
     height: 5.4rem;
     border-radius: 0.8rem;
-    font: 700 2.0rem Righteous;
+    font: 400 2.0rem Poppins;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s ease;
 
     text-decoration: none;
     color: var(--color-title);
@@ -55,12 +55,93 @@
 }
 
 .buttons-container a.student{
-    background-color: var(--color-primary);
+    background-color: var(--color-secundary);
+    
+}
+
+.buttons-container a.student:hover{
+    background-color: var(--color-secundary-dark);
 }
 
 .buttons-container a.admin {
-    background-color: var(--color-secundary);
+    background-color: var(--color-secundary-light);
 }
 
+.buttons-container a.admin:hover {
+    background-color: #aa68c2;
+}
+
+.button-icon {
+    margin-right: 1rem;
+    font-size: 1.6rem;
+}
+
+.span-description {
+    justify-content: center;
+    text-align: center;
+}
+
+.span-description h3 {
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+@media (min-width: 1100px) {
+    #page-landing-content {
+        max-width: 1100px;
+
+        display: grid;
+        grid-template-rows: 350px 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-areas: 
+        "logo hero hero"
+        "buttons total total"
+        ;
+    }
+
+    .logo-container {
+        grid-area: logo;
+        align-self: flex-start;
+        margin-top: 1rem;
+        text-align: left;
+    }
+
+    .logo-container h2 {
+        text-align: initial;
+        font-size: 2.5rem;
+    }
+
+    .logo-container img {
+        height: 100%;
+        margin-top: 0;
+    }
+
+    .heroImg {
+        grid-area: hero;
+        justify-self: end;
+        align-self: self-end;
+    }
+
+    .buttons-container {
+        grid-area: buttons;
+        justify-content: flex-start;
+    }
+
+    .buttons-container a {
+        font-size: 2.4rem;
+        width: 20rem;
+    }
+
+    .span-description {
+        grid-area: total;
+        font-size: 5rem;
+        justify-self: end;
+        align-self: center;
+    }
+
+    .span-description h3 {
+        font-size: 1.5rem;
+    }
+}
 
 
