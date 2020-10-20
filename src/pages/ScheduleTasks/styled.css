@@ -1,0 +1,50 @@
+
+#page-schedule {
+    width: 100vw;
+    height: 100vh;
+  
+    max-width: unset;
+}
+
+#page-schedule main {
+    margin: 3.2rem auto;
+    width: 90%;
+}
+
+#page-schedule .input-block {
+    margin-top: 1.4rem;
+}
+
+#page-schedule .input-block label {
+    color: var(--color-background);
+}
+
+#page-schedule .input-block input {
+    background: white;
+}
+
+.search-icon {
+    color: var(--color-text);
+}
+
+@media (min-width: 700px) {
+    #page-schedule main {
+        padding: 3.2rem 0;
+        max-width: 740px;
+        margin: 0 auto;
+    }
+
+    #page-schedule form {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 2fr 2fr;
+        column-gap: 16px;
+        position: absolute;
+        bottom: -28px;
+    }
+
+    #page-schedule button {
+        margin-top: 5.2rem;
+    }
+
+}

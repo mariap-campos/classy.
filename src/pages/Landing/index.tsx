@@ -21,7 +21,7 @@ function Landing(){
             <img src={landingImg} alt="" className="heroImg"/>
 
             <div className="buttons-container">  
-                <Link to="/agenda" className="student">
+                <Link to="/agenda/tasks" className="student">
                     <FontAwesomeIcon icon={faUser} className="button-icon" />
                     Aluno
                 </Link>

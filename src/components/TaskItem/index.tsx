@@ -6,7 +6,20 @@ import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 
 import './styles.css';
 
-const TaskItem = () => {
+export interface Task {
+        name: string,
+        materia: string,
+        descricao: string,
+        prazo: string,
+        classId: number,
+        id: number
+}
+
+interface TaskItemProps {
+    task: Task;
+}
+
+const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
     const [showSquare, setShowSquare] = React.useState(false)
     const [showChecked, setShowChecked] = React.useState(true)
     const onClick = () => {
@@ -18,19 +31,19 @@ const TaskItem = () => {
     <article className="task-item">
         <header>
             <div>
-                <p><strong>Questionário 2</strong></p>
+                <p><strong>{task.name}</strong></p>
                 <p>
-                    <span>Implementação Orientada a Objetos</span>
+                    <span>{task.materia}</span>
                 </p>
             </div>
         </header>
         <div className="task-description">
             
-            <p><span>Descrição: </span>Realizar o questionário disponivel na barra de tarefas do Microsoft Teams da disciplina</p>
+            <p><span>Descrição: </span>{task.descricao}</p>
         </div>
         <footer>
             <p>
-                Prazo: <strong>20/10/2020</strong>
+                Prazo: <strong>{task.prazo}</strong>
             </p>
             <i onClick={onClick}>
                 { showSquare ? <Square /> : null }
