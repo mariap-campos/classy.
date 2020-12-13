@@ -23,6 +23,20 @@
     background: white;
 }
 
+.class-name {
+    text-align: center;
+    font-size: 2.3rem;
+    margin-top: 2rem;
+}
+
+p.class-name{
+    color: var(--color-primary)
+}
+
+.class-name strong {
+    color: var(--color-text-in-dark)
+}
+
 .search-icon {
     color: var(--color-text);
 }

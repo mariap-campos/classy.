@@ -15,5 +15,5 @@
     margin-top: 2.2rem;
 }
 .box-button button:hover{
-    background-color: var(--color-secundary-dark);
+    background-color: var(--color-secundary);
 }

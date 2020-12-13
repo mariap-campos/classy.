@@ -7,11 +7,13 @@ import ScheduleTasks from './pages/ScheduleTasks';
 import ScheduleExams from './pages/ScheduleExams';
 import CadastroTurma from './pages/CadastroTurma';
 import CadastroTask from './pages/CadastroTask';
+import HomeAluno from './pages/HomeAluno';
 
 function Routes() {
     return (
         <BrowserRouter>
             <Route path="/" exact component={Landing}/>
+            <Route path="/agenda" exact component={HomeAluno}/>
             <Route path="/agenda/tasks" component={ScheduleTasks}/>
             <Route path="/agenda/exams" component={ScheduleExams}/>
             <Route path="/cadastro" exact component={Cadastro}/>

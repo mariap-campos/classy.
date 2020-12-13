@@ -1,0 +1,10 @@
+#home-aluno {
+    width: 100vw;
+    height: 100vh;
+  
+    max-width: unset;
+}
+
+#home-aluno .page-header{
+    height: 200px;
+}

@@ -1,6 +1,7 @@
 import React, {FormEvent, useState} from 'react';
 import PageHeader from '../../components/PageHeader';
 import TaskItem, { Task } from '../../components/TaskItem';
+import EmptyItem from '../../components/EmptyItem';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -15,10 +16,16 @@ import Button from '../../components/Button';
 const ScheduleTasks = () => {
     const [tasks, setTasks] = useState([]);
     const [classId, setClassId] = useState('');
-    const [className, setClassName]= useState('');
+    const [classes, setClasses]= useState('');
+    const [check, setCheck]= useState(false);
+    const [title, setTitle]= useState(false);
 
     async function searchTasks(e: FormEvent) {
         e.preventDefault();
+
+        setClasses('');
+        setTitle(true);
+        setCheck(true);
 
         const response = await api.get('tasks', {
             params: {
@@ -26,25 +33,29 @@ const ScheduleTasks = () => {
             }
         });
         setTasks(response.data);
-            const idk = await api.get('classes', {
+        console.log(response.data)
+            const responseName = await api.get('classes', {
                 params: {
                     classId
                 }
             });
-            if (classId !== null) {
-                setClassName(idk.data[0].className);
-            }
+            if (responseName.data[0]) {
+                setClasses(responseName.data[0].className)
+            } else {
+                setTitle(false);
 
+            }
+            // responseName.data[0] && setClasses(responseName.data[0].className)
     }
 
     return (
         <div id="page-schedule" className="container">
-            <PageHeader title="Próximas atividades e trabalhos no seu classy" back="/">
+            <PageHeader title="Próximas atividades e trabalhos no seu classy" back="/" description="Para começar, digite o id do seu classy...">
                 <form id="search-tasks" onSubmit={searchTasks}>
                     <Input 
                         className="input-block"
                         name="classId" 
-                        label="Id da turma:" 
+                        label="Id do Classy:" 
                         type="text"
                         value={classId}
                         onChange={(e) => {setClassId(e.target.value)}}
@@ -56,13 +67,12 @@ const ScheduleTasks = () => {
             </PageHeader>
 
             <main>
-                {className ? className : null}
-                {tasks.length < 1 ? '//SEM TASKS COMPONENTES AQUI' : tasks.map((task: Task) => {
+                {console.log(classes)}
+                {title ? <p className="class-name"><strong>Turma:</strong> {classes}</p> : null}
+                {/* <p className="class-name"><strong>Turma:</strong> {classes}</p>  */}
+                {tasks.length < 1 && check ? <EmptyItem/> : tasks.map((task: Task) => {
                     return <TaskItem key={task.id} task={task} />
                 })}
-                <Link to="/agenda/exams" className="admin">
-                    Provas
-                </Link>
             </main>
 
         </div>
